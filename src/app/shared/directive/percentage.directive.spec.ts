@@ -58,4 +58,40 @@ describe('PercentageDirective', () => {
         directiveElm.triggerEventHandler('keydown', event);
         expect(directive.validatePercentageOnly).toHaveBeenCalled();
     });
+
+    it('validatePercentageOnly call with keyCode = 46 (Delete)', () => {
+        const eventInit: KeyboardEventInit = {
+            keyCode: 46,
+            ctrlKey: false,
+            key: "Delete"
+        };
+        const event = new KeyboardEvent('keydown', eventInit);
+        spyOn(directive, 'validatePercentageOnly').and.callThrough();
+        directiveElm.triggerEventHandler('keydown', event);
+        expect(directive.validatePercentageOnly).toHaveBeenCalled();
+    });
+
+    it('validatePercentageOnly call with keyCode = 9 (Tab)', () => {
+        const eventInit: KeyboardEventInit = {
+            keyCode: 9,
+            ctrlKey: false,
+            key: "Tab"
+        };
+        const event = new KeyboardEvent('keydown', eventInit);
+        spyOn(directive, 'validatePercentageOnly').and.callThrough();
+        directiveElm.triggerEventHandler('keydown', event);
+        expect(directive.validatePercentageOnly).toHaveBeenCalled();
+    });
+
+    it('validatePercentageOnly call with keyCode = 35 (End)', () => {
+        const eventInit: KeyboardEventInit = {
+            keyCode: 35,
+            ctrlKey: false,
+            key: "End"
+        };
+        const event = new KeyboardEvent('keydown', eventInit);
+        spyOn(directive, 'validatePercentageOnly').and.callThrough();
+        directiveElm.triggerEventHandler('keydown', event);
+        expect(directive.validatePercentageOnly).toHaveBeenCalled();
+    });
 });
