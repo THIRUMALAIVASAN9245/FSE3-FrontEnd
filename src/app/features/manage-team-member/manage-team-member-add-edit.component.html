@@ -23,15 +23,15 @@
         </div>
         <div class="col-5 mb-3">
             <label class="form-label">Skill Sets</label>
-            <checkbox-group id="check-skillSets" formControlName="skillSets" class="form-control" style="height: 180px;overflow: scroll;"
+            <checkbox-group id="check-skillSets" formControlName="skillSets" class="form-control height-180-overflow"
                 [ngClass]="{ 'is-invalid': submitted && (f.skillSets.errors || form.hasError('requireCheckboxToBeChecked')) }">
                 <checkbox *ngFor="let skill of skillList; let i = index" value="{{skill}}">{{skill}}</checkbox>
             </checkbox-group>
             <div *ngIf="submitted && f.skillSets.errors" class="invalid-feedback">
                 <div *ngIf="f.skillSets.errors.required">Skill Sets is required</div>
             </div>
-            <div style="width: 100%;margin-top: .25rem;font-size: .875em;color: var(--bs-form-invalid-color);"
-                *ngIf="submitted && form.hasError('requireCheckboxToBeChecked')">Min 3 skills requird</div>
+            <div class="bs-form-invalid-color-o" *ngIf="submitted && form.hasError('requireCheckboxToBeChecked')">Min 3
+                skills requird</div>
         </div>
     </div>
     <div class="row">
@@ -54,15 +54,16 @@
     </div>
     <div class="row">
         <div class="col-10 mb-3">
-            <div style="width: 100%;margin-top: .25rem;font-size: .875em;color: var(--bs-form-invalid-color);"
-                *ngIf="submitted && form.hasError('dateLessThan')">Project Start Date must be less than Project End
+            <div class="bs-form-invalid-color-o" *ngIf="submitted && form.hasError('dateLessThan')">Project Start Date
+                must be less than Project End
                 Date or Project End Date must be greather than Project Start Date</div>
         </div>
     </div>
     <div class="row">
         <div class="col-5 mb-3">
             <label class="form-label">Allocation Percentage</label>
-            <input id="input-allocationPercentage" type="text" formControlName="allocationPercentage" class="form-control" appPercentageDirective
+            <input id="input-allocationPercentage" type="text" formControlName="allocationPercentage"
+                class="form-control" appPercentageDirective
                 [ngClass]="{ 'is-invalid': submitted && f.allocationPercentage.errors }" />
             <div *ngIf="submitted && f.allocationPercentage.errors" class="invalid-feedback">
                 <div *ngIf="f.allocationPercentage.errors.required">Allocation Percentage is required</div>

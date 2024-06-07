@@ -95,6 +95,11 @@ export class ManageTeamMemberAddEditComponent implements OnInit {
             return;
         }
 
+        if (new Date() > new Date(this.form.value.projectEndDate) && this.form.value.allocationPercentage > 0) {
+            this.alertService.error('Update alacation percentage as ZERO', { keepAfterRouteChange: false });
+            return;
+        }
+
         this.submitting = true;
         this.saveTeamMember()
             .pipe(first())

@@ -5,7 +5,7 @@ import { CheckboxGroupComponent } from './checkbox-group.component';
     selector: 'checkbox',
     template: `
     <div (click)="toggleCheck()">
-        <input class="form-check-input" id="{{value}}" style="margin-right: 7px;" type="checkbox" [checked]="isChecked()" />
+        <input class="form-check-input marginright-7" id="{{value}}" type="checkbox" [checked]="isChecked()" />
         <ng-content></ng-content>
     </div>`
 })

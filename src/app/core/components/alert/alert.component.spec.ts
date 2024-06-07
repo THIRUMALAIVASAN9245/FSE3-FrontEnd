@@ -1,7 +1,7 @@
 // jasmine spy example
 
 import { TestBed, ComponentFixture } from "@angular/core/testing";
-import { of } from "rxjs";
+import { of, timer } from "rxjs";
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { AuthenticationService } from "@app/core/services/authentication.service";
@@ -90,7 +90,9 @@ describe("AlertComponent", () => {
         component.removeAlert(alert1);
 
         // assert
-        setTimeout(() => { expect(component.alerts.length).toBe(1); }, 1000);
+        timer(1000).subscribe(() => {
+            expect(component.alerts.length).toBe(1);
+        });
     });
 
     it("should call ngOnInit with message", () => {

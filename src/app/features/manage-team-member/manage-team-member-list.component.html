@@ -14,16 +14,16 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th style="width: 10%">member Id</th>
-            <th style="width: 10%">member Name</th>
-            <th style="width: 10%">Number Of Exp</th>
-            <th style="width: 10%">Skill Sets</th>
-            <th style="width: 10%">Project Start Date</th>
-            <th style="width: 10%">Project End Date</th>
-            <th style="width: 10%">Allocation Percentage</th>
-            <th style="width: 10%">Additional Info</th>
-            <th style="width: 10%">Role</th>
-            <th style="width: 10%"></th>
+            <th class="width-10">member Id</th>
+            <th class="width-10">member Name</th>
+            <th class="width-10">Number Of Exp</th>
+            <th class="width-10">Skill Sets</th>
+            <th class="width-10">Project Start Date</th>
+            <th class="width-10">Project End Date</th>
+            <th class="width-10">Allocation Percentage</th>
+            <th class="width-10">Additional Info</th>
+            <th class="width-10">Role</th>
+            <th class="width-10"></th>
         </tr>
     </thead>
     <tbody>
@@ -34,12 +34,12 @@
             <td>
                 <div class="item" *ngFor="let item of teamMember.skillSets">{{item}}</div>
             </td>
-            <td>{{teamMember.projectStartDate}}</td>
-            <td>{{teamMember.projectEndDate}}</td>
+            <td>{{teamMember.projectStartDate | date: 'dd/MM/yyyy'}}</td>
+            <td>{{teamMember.projectEndDate | date: 'dd/MM/yyyy'}}</td>
             <td>{{teamMember.allocationPercentage}}</td>
             <td>{{teamMember.additionalInfo}}</td>
             <td>{{teamMember.role}}</td>
-            <td style="white-space: nowrap">
+            <td class="whitespace-nowrap">
                 <a routerLink="manage-team-member-edit/{{teamMember.id}}" class="btn btn-sm btn-primary me-1">Edit</a>
                 <button (click)="deleteUser(teamMember.id)" class="btn btn-sm btn-danger btn-delete-user">
                     <span>Delete</span>

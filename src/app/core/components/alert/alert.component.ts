@@ -2,13 +2,13 @@
 import { Router, NavigationStart } from '@angular/router';
 import { Alert, AlertType } from '@app/core/models/alert';
 import { AlertService } from '@app/core/services/alert.service';
-import { Subscription } from 'rxjs';
+import { Subscription, timer } from 'rxjs';
 
 @Component({ selector: 'alert', templateUrl: 'alert.component.html' })
 export class AlertComponent implements OnInit, OnDestroy {
     @Input() id = 'default-alert';
     @Input() fade = true;
-
+    delayInMilliseconds = 2000;
     alerts: Alert[] = [];
     alertSubscription!: Subscription;
     routeSubscription!: Subscription;
@@ -34,7 +34,9 @@ export class AlertComponent implements OnInit, OnDestroy {
 
                 // auto close alert if required
                 if (alert.autoClose) {
-                    setTimeout(() => this.removeAlert(alert), 3000);
+                    timer(this.delayInMilliseconds).subscribe(() => {
+                        this.removeAlert(alert);
+                    });
                 }
             });
 
@@ -60,10 +62,9 @@ export class AlertComponent implements OnInit, OnDestroy {
         const timeout = this.fade ? 250 : 0;
         alert.fade = this.fade;
 
-        setTimeout(() => {
-            // filter alert out of array
+        timer(timeout).subscribe(() => {
             this.alerts = this.alerts.filter(x => x !== alert);
-        }, timeout);
+        });
     }
 
     cssClass(alert: Alert): string | null {

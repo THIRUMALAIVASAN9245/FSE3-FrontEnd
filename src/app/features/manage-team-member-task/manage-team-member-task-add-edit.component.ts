@@ -32,7 +32,7 @@ export class ManageTeamMemberTaskAddEditComponent implements OnInit {
         this.manageTeamMemberService.getTeamMemberListAll()
             .pipe(first())
             .subscribe(response => {
-                        this.dataList = response;
+                this.dataList = response;
             });
 
         this.id = this.route.snapshot.params['id'];
@@ -52,13 +52,13 @@ export class ManageTeamMemberTaskAddEditComponent implements OnInit {
 
         this.title = 'Add Team Member Task';
         if (this.id) {
-                // edit mode
+            // edit mode
             this.title = 'Edit Team Member Task';
             this.loading = true;
             this.manageTeamMemberTaskService.getTeamMemberTaskById(this.id)
                 .pipe(first())
                 .subscribe(x => {
-                                this.form.patchValue(x);
+                    this.form.patchValue(x);
                     this.loading = false;
                     this.getTeammemberInfo();
                 });
@@ -75,7 +75,7 @@ export class ManageTeamMemberTaskAddEditComponent implements OnInit {
         this.manageTeamMemberService.getTeamMemberById(+teamMemberId)
             .pipe(first())
             .subscribe((x: TeamMember) => {
-                        this.teammemberInfo = x;
+                this.teammemberInfo = x;
                 this.f.teamMemberName.patchValue(x.memberName);
                 this.loading = false;
             });
@@ -96,12 +96,12 @@ export class ManageTeamMemberTaskAddEditComponent implements OnInit {
         }
 
         if (new Date(this.teammemberInfo.projectEndDate) < new Date(this.form.value.taskEndDate)) {
-            this.alertService.error('Task End Date  should be less than Project End Date', { keepAfterRouteChange: false, autoClose: true });
+            this.alertService.error('Task End Date  should be less than Project End Date', { keepAfterRouteChange: false });
             return;
         }
 
         if (new Date(this.teammemberInfo.projectStartDate) > new Date(this.form.value.taskStartDate)) {
-            this.alertService.error('Task Start Date  should be greather than Project Start Date', { keepAfterRouteChange: false, autoClose: true });
+            this.alertService.error('Task Start Date  should be greather than Project Start Date', { keepAfterRouteChange: false });
             return;
         }
 

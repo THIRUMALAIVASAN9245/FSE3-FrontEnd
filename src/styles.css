@@ -132,3 +132,28 @@
   #caretRightIcon {
     float: right;
   }
+
+  .width-10
+  {
+    width: 10%
+  }
+
+  .marginright-7 {
+    margin-right: 7px;
+  }
+
+  .whitespace-nowrap {
+    white-space: nowrap
+  }
+
+  .bs-form-invalid-color-o {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .875em;
+    color: var(--bs-form-invalid-color);
+  }
+
+  .height-180-overflow {
+    height: 180px;
+    overflow: scroll;
+  }

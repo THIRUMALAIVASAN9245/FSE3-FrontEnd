@@ -3,18 +3,22 @@
     <div class="card-body">
         <p>Welcome !... <strong>{{teamMember.memberName}}</strong>.</p>
         <p>Your role is: <strong>{{teamMember.role}}</strong>.</p>
+        <p>Project Start Date: <strong>{{teamMember.projectStartDate | date: 'dd/MM/yyyy'}}</strong> | Project End Date:
+            <strong>{{teamMember.projectEndDate | date: 'dd/MM/yyyy'}}</strong> | Allocation Percentage:
+            <strong>{{teamMember.allocationPercentage}} %</strong>
+        </p>
     </div>
 </div>
 
 <table class="table table-striped">
     <thead>
         <tr>
-            <th style="width: 10%">Team Member Id</th>
-            <th style="width: 10%">Team Member Name</th>
-            <th style="width: 10%">Task Name</th>
-            <th style="width: 10%">Deliverables</th>
-            <th style="width: 10%">Task Start Date</th>
-            <th style="width: 10%">Task End Date</th>
+            <th class="width-10">Team Member Id</th>
+            <th class="width-10">Team Member Name</th>
+            <th class="width-10">Task Name</th>
+            <th class="width-10">Deliverables</th>
+            <th class="width-10">Task Start Date</th>
+            <th class="width-10">Task End Date</th>
         </tr>
     </thead>
     <tbody>
@@ -23,8 +27,8 @@
             <td>{{user.teamMemberName}}</td>
             <td>{{user.taskName}}</td>
             <td>{{user.deliverables}}</td>
-            <td>{{user.taskStartDate}}</td>
-            <td>{{user.taskEndDate}}</td>
+            <td>{{user.taskStartDate | date: 'dd/MM/yyyy'}}</td>
+            <td>{{user.taskEndDate | date: 'dd/MM/yyyy'}}</td>
         </tr>
         <tr *ngIf="!teamMemberTasks">
             <td colspan="4" class="text-center">

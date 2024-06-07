@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-prod": "ng build --prod --optimization=true --build-optimizer=true",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --code-coverage",
     "json-server": "json-server --watch db.json --port 3004",

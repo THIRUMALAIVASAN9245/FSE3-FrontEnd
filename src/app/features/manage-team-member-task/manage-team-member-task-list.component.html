@@ -1,12 +1,13 @@
 ﻿<h1>Manage Team Member Task</h1>
-<a id="manage-team-member-task-add" routerLink="manage-team-member-task-add" class="btn btn-sm btn-success mb-2">Add Team Member Task</a>
+<a id="manage-team-member-task-add" routerLink="manage-team-member-task-add" class="btn btn-sm btn-success mb-2">Add
+    Team Member Task</a>
 
 <div class="row">
     <div class="col-5 mb-3">
         <label class="form-label">Team Member Name</label>
         <div class="search-hero">
-            <input id="txtSearchInput" class="form-control" type="text" name="search" autocomplete="off" [(ngModel)]="searchString"
-                placeholder="Search by team member name">
+            <input id="txtSearchInput" class="form-control" type="text" name="search" autocomplete="off"
+                [(ngModel)]="searchString" placeholder="Search by team member name">
         </div>
     </div>
 </div>
@@ -14,13 +15,13 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th style="width: 10%">Member Id</th>
-            <th style="width: 10%">Member Name</th>
-            <th style="width: 10%">Task Name</th>
-            <th style="width: 10%">Deliverables</th>
-            <th style="width: 10%">Task Start Date</th>
-            <th style="width: 10%">Task End Date</th>
-            <th style="width: 10%"></th>
+            <th class="width-10">Member Id</th>
+            <th class="width-10">Member Name</th>
+            <th class="width-10">Task Name</th>
+            <th class="width-10">Deliverables</th>
+            <th class="width-10">Task Start Date</th>
+            <th class="width-10">Task End Date</th>
+            <th class="width-10"></th>
         </tr>
     </thead>
     <tbody>
@@ -29,9 +30,9 @@
             <td>{{teamMemberTask.teamMemberName}}</td>
             <td>{{teamMemberTask.taskName}}</td>
             <td>{{teamMemberTask.deliverables}}</td>
-            <td>{{teamMemberTask.taskStartDate}}</td>
-            <td>{{teamMemberTask.taskEndDate}}</td>
-            <td style="white-space: nowrap">
+            <td>{{teamMemberTask.taskStartDate | date: 'dd/MM/yyyy'}}</td>
+            <td>{{teamMemberTask.taskEndDate | date: 'dd/MM/yyyy'}}</td>
+            <td class="whitespace-nowrap">
                 <a routerLink="manage-team-member-task-edit/{{teamMemberTask.id}}"
                     class="btn btn-sm btn-primary me-1">Edit</a>
                 <button (click)="deleteUser(teamMemberTask.id)" class="btn btn-sm btn-danger btn-delete-user">

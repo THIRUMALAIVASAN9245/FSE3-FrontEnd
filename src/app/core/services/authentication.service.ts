@@ -35,6 +35,9 @@ export class AuthenticationService {
                     id: user[0].id,
                     memberName: user[0].memberName,
                     role: user[0].role,
+                    projectStartDate: user[0].projectStartDate,
+                    projectEndDate: user[0].projectEndDate,
+                    allocationPercentage: user[0].allocationPercentage,
                     token: `fake-jwt-token.${user[0].id}`
                 };
                 localStorage.setItem('user', JSON.stringify(userResponse));

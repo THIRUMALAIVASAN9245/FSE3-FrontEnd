@@ -33,11 +33,11 @@
     <div *ngIf="teammemberInfo" class="row">
         <div class="col-3 mb-3">
             <label class="form-label">Project Start Date</label>
-            <input type="text" disabled class="form-control" value="{{teammemberInfo.projectStartDate}}" />
+            <input type="text" disabled class="form-control" value="{{teammemberInfo.projectStartDate | date: 'dd/MM/yyyy'}}" />
         </div>
         <div class="col-3 mb-3">
             <label class="form-label">Project End Date</label>
-            <input type="text" disabled class="form-control" value="{{teammemberInfo.projectEndDate}}" />
+            <input type="text" disabled class="form-control" value="{{teammemberInfo.projectEndDate | date: 'dd/MM/yyyy'}}" />
         </div>
         <div class="col-3 mb-3">
             <label class="form-label">Allocation Percentage</label>
@@ -83,7 +83,7 @@
     </div>
     <div class="row">
         <div class="col-10 mb-3">
-            <div style="width: 100%;margin-top: .25rem;font-size: .875em;color: var(--bs-form-invalid-color);"
+            <div class="bs-form-invalid-color-o"
                 *ngIf="submitted && form.hasError('dateLessThan')">Project Start Date must be less than Project End
                 Date or Task End Date must be greather than Task Start Date</div>
         </div>
