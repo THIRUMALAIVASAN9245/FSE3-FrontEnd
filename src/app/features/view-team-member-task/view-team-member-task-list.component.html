@@ -1,0 +1,40 @@
+﻿<div class="card mt-4">
+    <h4 class="card-header">Project Management Tracker</h4>
+    <div class="card-body">
+        <p>Welcome !... <strong>{{teamMember.memberName}}</strong>.</p>
+        <p>Your role is: <strong>{{teamMember.role}}</strong>.</p>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 10%">Team Member Id</th>
+            <th style="width: 10%">Team Member Name</th>
+            <th style="width: 10%">Task Name</th>
+            <th style="width: 10%">Deliverables</th>
+            <th style="width: 10%">Task Start Date</th>
+            <th style="width: 10%">Task End Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of teamMemberTasks">
+            <td>{{user.teamMemberId}}</td>
+            <td>{{user.teamMemberName}}</td>
+            <td>{{user.taskName}}</td>
+            <td>{{user.deliverables}}</td>
+            <td>{{user.taskStartDate}}</td>
+            <td>{{user.taskEndDate}}</td>
+        </tr>
+        <tr *ngIf="!teamMemberTasks">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+        <tr *ngIf="teamMemberTasks?.length==0">
+            <td colspan="6" class="text-center">
+                No Records Found
+            </td>
+        </tr>
+    </tbody>
+</table>

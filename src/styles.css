@@ -1,0 +1,134 @@
+/* You can add global styles to this file, and also import other style files */
+.navbar {
+    padding: 0%;
+  }
+  
+  .mainmenu a,
+  .navbar-default .navbar-nav > li > a,
+  .mainmenu ul li a,
+  .navbar-nav .nav-link {
+    text-transform: capitalize;
+    padding: 9px 9px 0px 0px;
+    font-family: "Roboto", sans-serif;
+    display: block !important;
+    font-weight: 550;
+  }
+  
+  .mainmenu .active a,
+  .mainmenu .active a:focus,
+  .mainmenu .active a:hover,
+  .mainmenu li a:hover,
+  .mainmenu li a:focus,
+  .navbar-default .navbar-nav > .show > a,
+  .navbar-default .navbar-nav > .show > a:focus,
+  .navbar-default .navbar-nav > .show > a:hover {
+    color: black;
+    outline: 0;
+  }
+  
+  .top-level-menu {
+    list-style: none;
+    padding-left: 2px;
+    margin-top: 1px;
+    margin-bottom: 0px;
+  }
+  
+  .top-level-menu > li {
+    position: relative;
+    float: left;
+    padding-left: 15px;
+  }
+  
+  .top-level-menu li:hover > ul {
+    display: inline-block;
+  }
+  
+  .top-level-menu a {
+    text-decoration: none;
+    padding: 0 0 0 0px;
+    display: inline-block;
+  }
+  
+  .second-level-menu {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    width: 200px;
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+    display: none;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    background-color: white;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    z-index: 40000;
+  }
+  
+  .second-level-menu > li {
+    position: relative;
+    background: white;
+    border-radius: 5px;
+  }
+  
+  .second-level-menu1 {
+    padding: 0px;
+  }
+  
+  .referrenceOnHoverTopMenu {
+    color: gray !important;
+  }
+  
+  .referrenceOnHoverTopMenu:hover {
+    height: 25px;
+    color: #212529 !important;
+  }
+  
+  .referrenceOnHover {
+    color: gray;
+  }
+  
+  .referrenceOnHover:hover {
+    background: #eee;
+    height: 21px;
+    color: #212529 !important;
+  }
+  
+  .third-level-menu {
+    position: absolute;
+    top: 0px;
+    right: -151px;
+    width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    background-color: white;
+    padding-bottom: 4px;
+    padding-top: 4px;
+  }
+  
+  .third-level-menu > li {
+    position: relative;
+    background: white;
+    border-radius: 5px;
+  }
+  
+  .third-level-menu1 {
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 100%;
+  }
+  
+  nav .container {
+    width: 100%;
+  }
+  
+  #caretRightIcon {
+    float: right;
+  }

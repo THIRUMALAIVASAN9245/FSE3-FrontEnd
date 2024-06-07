@@ -1,0 +1,60 @@
+﻿<h1>Manage Team Member</h1>
+<a id="add-new-team-member" routerLink="manage-team-member-add" class="btn btn-sm btn-success mb-2">Add Team Member</a>
+
+<div class="row">
+    <div class="col-5 mb-3">
+        <label class="form-label">Team Member Name</label>
+        <div class="search-hero">
+            <input class="form-control" type="text" name="search" autocomplete="off" [(ngModel)]="searchString"
+                placeholder="Search by team member name">
+        </div>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 10%">member Id</th>
+            <th style="width: 10%">member Name</th>
+            <th style="width: 10%">Number Of Exp</th>
+            <th style="width: 10%">Skill Sets</th>
+            <th style="width: 10%">Project Start Date</th>
+            <th style="width: 10%">Project End Date</th>
+            <th style="width: 10%">Allocation Percentage</th>
+            <th style="width: 10%">Additional Info</th>
+            <th style="width: 10%">Role</th>
+            <th style="width: 10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let teamMember of teamMembers | filter : 'memberName' : searchString; let i = index">
+            <td>{{teamMember.id}}</td>
+            <td>{{teamMember.memberName}}</td>
+            <td>{{teamMember.numberOfExp}}</td>
+            <td>
+                <div class="item" *ngFor="let item of teamMember.skillSets">{{item}}</div>
+            </td>
+            <td>{{teamMember.projectStartDate}}</td>
+            <td>{{teamMember.projectEndDate}}</td>
+            <td>{{teamMember.allocationPercentage}}</td>
+            <td>{{teamMember.additionalInfo}}</td>
+            <td>{{teamMember.role}}</td>
+            <td style="white-space: nowrap">
+                <a routerLink="manage-team-member-edit/{{teamMember.id}}" class="btn btn-sm btn-primary me-1">Edit</a>
+                <button (click)="deleteUser(teamMember.id)" class="btn btn-sm btn-danger btn-delete-user">
+                    <span>Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!teamMembers">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+        <tr *ngIf="teamMembers?.length==0">
+            <td colspan="10" class="text-center">
+                No Records Found
+            </td>
+        </tr>
+    </tbody>
+</table>

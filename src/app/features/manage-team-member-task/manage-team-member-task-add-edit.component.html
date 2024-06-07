@@ -1,0 +1,101 @@
+﻿<h1>{{title}}</h1>
+<form *ngIf="!loading" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-5 mb-3">
+            <label class="form-label">Team Member</label>
+            <select id="selectTeamMemberId" formControlName="teamMemberId" class="form-group form-control" (change)="onChange()"
+                [ngClass]="{ 'is-invalid': submitted && f.teamMemberId.errors }">
+                <option value=""></option>
+                <option *ngFor="let item of this.dataList;let i = index" value="{{item.id}}">
+                    {{item.memberName}}
+                </option>
+            </select>
+            <div *ngIf="submitted && f.teamMemberId.errors" class="invalid-feedback">
+                <div *ngIf="f.teamMemberId.errors.required">Team Member is required</div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="teammemberInfo" class="row">
+        <div class="col-5 mb-3">
+            <label class="form-label">Number Of Exp</label>
+            <input type="text" disabled class="form-control" value="{{teammemberInfo.numberOfExp}}" />
+        </div>
+        <div class="col-5 mb-3">
+            <label class="form-label">Skill Sets</label>
+            <input type="text" disabled class="form-control" value="{{teammemberInfo.skillSets}}" />
+        </div>
+        <div class="col-5 mb-3">
+            <label class="form-label">Additional Info</label>
+            <input type="text" disabled class="form-control" value="{{teammemberInfo.additionalInfo}}" />
+        </div>
+    </div>
+    <div *ngIf="teammemberInfo" class="row">
+        <div class="col-3 mb-3">
+            <label class="form-label">Project Start Date</label>
+            <input type="text" disabled class="form-control" value="{{teammemberInfo.projectStartDate}}" />
+        </div>
+        <div class="col-3 mb-3">
+            <label class="form-label">Project End Date</label>
+            <input type="text" disabled class="form-control" value="{{teammemberInfo.projectEndDate}}" />
+        </div>
+        <div class="col-3 mb-3">
+            <label class="form-label">Allocation Percentage</label>
+            <input type="text" disabled class="form-control" value="{{teammemberInfo.allocationPercentage}}" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3 mb-3">
+            <label class="form-label">Task Name</label>
+            <input id="txtTaskName" type="text" formControlName="taskName" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.taskName.errors }" />
+            <div *ngIf="submitted && f.taskName.errors" class="invalid-feedback">
+                <div *ngIf="f.taskName.errors.required">Task Name is required</div>
+            </div>
+        </div>
+        <div class="col-5 mb-3">
+            <label class="form-label">Deliverables</label>
+            <input id="txtDeliverables"  type="text" formControlName="deliverables" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.deliverables.errors }" />
+            <div *ngIf="submitted && f.deliverables.errors" class="invalid-feedback">
+                <div *ngIf="f.deliverables.errors.required">Deliverables is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 mb-3">
+            <label class="form-label">Task Start Date</label>
+            <input id="txtTaskStartDate" type="date" formControlName="taskStartDate" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && (f.taskStartDate.errors || form.hasError('dateLessThan')) }" />
+            <div *ngIf="submitted && f.taskStartDate.errors" class="invalid-feedback">
+                <div *ngIf="f.taskStartDate.errors.required">Task Start Date is required</div>
+            </div>
+        </div>
+        <div class="col-5 mb-3">
+            <label class="form-label">Task End Date</label>
+            <input id="txtTaskEndDate" type="date" formControlName="taskEndDate" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && (f.taskEndDate.errors || form.hasError('dateLessThan')) }" />
+            <div *ngIf="submitted && f.taskEndDate.errors" class="invalid-feedback">
+                <div *ngIf="f.taskEndDate.errors.required">Task End Date is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 mb-3">
+            <div style="width: 100%;margin-top: .25rem;font-size: .875em;color: var(--bs-form-invalid-color);"
+                *ngIf="submitted && form.hasError('dateLessThan')">Project Start Date must be less than Project End
+                Date or Task End Date must be greather than Task Start Date</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button id="btn-save-team-Member-task" [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
+            Save
+        </button>
+        <a routerLink="/manage-team-member-task" class="btn btn-link">Cancel</a>
+    </div>
+</form>
+<div *ngIf="loading" class="text-center m-5">
+    <span class="spinner-border spinner-border-lg align-center"></span>
+</div>

@@ -1,0 +1,89 @@
+{
+  "teamMembers": [
+    {
+      "memberName": "Thiru",
+      "numberOfExp": 8,
+      "additionalInfo": "Full stack Developer sdfsdfsdf sdfsdfsdf",
+      "projectStartDate": "2024-06-10",
+      "projectEndDate": "2024-09-19",
+      "allocationPercentage": 100,
+      "role": "Admin",
+      "skillSets": [
+        "HTML",
+        "C#",
+        "SQL",
+        "ANGULAR",
+        "DOTNET"
+      ],
+      "id": 1
+    },
+    {
+      "memberName": "Vasan",
+      "numberOfExp": 8,
+      "additionalInfo": "Thiru Invalid User",
+      "projectStartDate": "2024-02-02",
+      "projectEndDate": "2024-05-05",
+      "allocationPercentage": 0,
+      "role": "User",
+      "skillSets": [
+        "JavaScript",
+        "MongoDB",
+        "ANGULAR",
+        "Python"
+      ],
+      "id": 7
+    },
+    {
+      "memberName": "Thiru valid User auto",
+      "numberOfExp": 8,
+      "additionalInfo": "Thiru Invalid User",
+      "projectStartDate": "2024-02-02",
+      "projectEndDate": "2024-05-05",
+      "allocationPercentage": 0,
+      "role": "Admin",
+      "skillSets": [
+        "JavaScript",
+        "MongoDB",
+        "ANGULAR",
+        "Python"
+      ],
+      "id": 10
+    },
+    {
+      "memberName": "Thiru valid User auto",
+      "numberOfExp": 8,
+      "additionalInfo": "Thiru Invalid User",
+      "projectStartDate": "2024-02-02",
+      "projectEndDate": "2024-05-05",
+      "allocationPercentage": 0,
+      "role": "Admin",
+      "skillSets": [
+        "JavaScript",
+        "MongoDB",
+        "ANGULAR",
+        "Python"
+      ],
+      "id": 11
+    }
+  ],
+  "taskList": [
+    {
+      "teamMemberName": "Thiru",
+      "teamMemberId": "1",
+      "taskName": "Sample Task Update",
+      "deliverables": "zxczxcxcz",
+      "taskStartDate": "2024-06-11",
+      "taskEndDate": "2024-06-28",
+      "id": 1
+    },
+    {
+      "teamMemberName": "Thiru",
+      "teamMemberId": "1",
+      "taskName": "Sample Task",
+      "deliverables": "Thiru Deliverables",
+      "taskStartDate": "2024-06-11",
+      "taskEndDate": "2024-06-13",
+      "id": 2
+    }
+  ]
+}

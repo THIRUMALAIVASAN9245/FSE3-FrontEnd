@@ -1,0 +1,17 @@
+﻿<nav class="navbar navbar-expand navbar-dark bg-dark px-3" *ngIf="user">
+    <div class="navbar-nav">
+        <a id="nav-home" class="nav-item nav-link" routerLink="/home" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a id="nav-manage-team-member" class="nav-item nav-link" routerLink="/manage-team-member"
+            routerLinkActive="active" *ngIf="isManager">Manage
+            Team Member</a>
+        <a id="nav-manage-team-member-task" class="nav-item nav-link" routerLink="/manage-team-member-task"
+            routerLinkActive="active" *ngIf="isManager">Assign Task</a>
+        <button id="btnlogout" class="btn btn-link nav-item nav-link" (click)="logout()">Logout</button>
+    </div>
+</nav>
+
+<div class="container">
+    <alert></alert>
+    <router-outlet></router-outlet>
+</div>
