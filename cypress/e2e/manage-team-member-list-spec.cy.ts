@@ -25,7 +25,7 @@ describe('Home With Admin User', () => {
     cy.wait(1000);
     cy.get('table tr').should('have.length.at.least', 2);
     cy.get('.table').should('be.visible')
-      .contains('tr', 'Thiru')
+      .contains('tr', 'NewUser')
       .then($row => {
         expect($row.index()).to.eq(0);
       });
